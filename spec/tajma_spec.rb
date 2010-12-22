@@ -26,4 +26,8 @@ describe Tajma do
       entry.last.to_i.should be_within(5).of(time)
     end
   end
+  
+  after(:all) do
+    FileUtils.rm File.expand_path('~/.tajma')
+  end
 end
