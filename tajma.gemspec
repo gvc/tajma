@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Guilherme Carvalho"]
   s.email       = ["guilherme@guava.com.br"]
   s.homepage    = "http://www.github.com/gvc/tajma"
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{Time tracking/Ruby Learning}
+  s.description = %q{Simple gem to track the time spent doing some tasks.}
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
