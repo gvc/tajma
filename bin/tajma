@@ -1,0 +1,20 @@
+#!/usr/bin/env ruby
+
+begin
+  require 'tajma'
+rescue LoadError
+  tajma_path = File.expand_path('../lib', __FILE__)
+  $:.unshift(tajma_path)
+  require "tajma"
+end
+
+begin
+  case ARGV.first
+  when 'start'
+    raise ArgumentError if ARGV.size < 2
+    Tajma.start(ARGV[1])
+  end
+rescue ArgumentError
+  puts 'Usage: tajma start task'
+end
+
