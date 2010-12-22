@@ -3,7 +3,7 @@
 begin
   require 'tajma'
 rescue LoadError
-  tajma_path = File.expand_path('../lib', __FILE__)
+  tajma_path = File.expand_path('../../lib', __FILE__)
   $:.unshift(tajma_path)
   require "tajma"
 end
