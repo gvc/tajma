@@ -5,7 +5,7 @@ module Tajma
     validates_length_of :description, minimum: 4
     
     def start_time
-      self[:start_time] || Time.now.to_i
+      self[:start_time] ||= Time.now.to_i
     end
     
     def summary
@@ -47,8 +47,8 @@ module Tajma
     def self.stop(description)
       task = self.find_by_description!(description)
       task.stop_time = Time.now.to_i
-      task.save
-      task
+      task.save!
+      task.reload
     rescue ActiveRecord::RecordNotFound
       false
     end
