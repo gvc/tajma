@@ -10,11 +10,16 @@ end
 
 begin
   case ARGV.first
-  when 'start'
+  when /^sta(rt)?$/
     raise ArgumentError if ARGV.size < 2
     Tajma.start(ARGV[1])
+  when /^sto(p)?$/
+    raise ArgumentError if ARGV.size < 2
+    Tajma.stop(ARGV[1])
   end
 rescue ArgumentError
-  puts 'Usage: tajma start task'
+  puts 'Usage: '
+  puts "\t tajma start task'"
+  puts "\t tajma stop task'"
 end
 
